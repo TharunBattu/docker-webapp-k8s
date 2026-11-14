@@ -36,17 +36,23 @@ public class SecurityServiceImpl implements SecurityService {
     }
 
     @Override
-    public void autologin(final String username, final String password) {
-        UserDetails userDetails = userDetailsService.loadUserByUsername(username);
-        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = 
-        new UsernamePasswordAuthenticationToken(userDetails, password, userDetails.getAuthorities());
+public void autologin(final String username, final String password) {
 
-        authenticationManager.authenticate(usernamePasswordAuthenticationToken);
+    UserDetails userDetails =
+        userDetailsService.loadUserByUsername(username);
 
-        if (usernamePasswordAuthenticationToken.isAuthenticated()) {
-            SecurityContextHolder.getContext()
-            .setAuthentication(usernamePasswordAuthenticationToken);
-            logger.debug(String.format("Auto login %s successfully!", username));
-        }
-    }
+    UsernamePasswordAuthenticationToken token =
+        new UsernamePasswordAuthenticationToken(
+            userDetails,
+            password
+        );
+
+    org.springframework.security.core.Authentication authentication =
+        authenticationManager.authenticate(token);
+
+    SecurityContextHolder.getContext()
+        .setAuthentication(authentication);
+
+    logger.debug("Auto login %s successfully!", username);
+}
 }

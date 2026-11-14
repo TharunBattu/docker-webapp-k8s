@@ -1,7 +1,6 @@
 package com.visualpathit.account.controller;
 
 import com.visualpathit.account.model.User;
-import com.visualpathit.account.service.ProducerService;
 import com.visualpathit.account.service.SecurityService;
 import com.visualpathit.account.service.UserService;
 import com.visualpathit.account.utils.MemcachedUtils;
@@ -39,9 +38,6 @@ public class UserController {
 
     @Autowired
     private UserValidator userValidator;
-
-    @Autowired
-    private ProducerService producerService;
 
     /** {@inheritDoc} */
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
@@ -180,19 +176,6 @@ public class UserController {
             return "redirect:/welcome?updated";
         }
         return "redirect:/users/" + user.getId();
-    }
-
-    /** Admin: publishes 20 test messages to RabbitMQ. */
-    @RequestMapping(value = { "/user/rabbit" }, method = { RequestMethod.GET })
-    public String rabbitmqSetUp() {
-        for (int i = 0; i < 20; i++) {
-            producerService.produceMessage(generateString());
-        }
-        return "rabbitmq";
-    }
-
-    private static String generateString() {
-        return "uuid = " + UUID.randomUUID().toString();
     }
 
     private static boolean canEdit(final Principal principal, final String username) {

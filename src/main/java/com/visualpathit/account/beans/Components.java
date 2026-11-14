@@ -50,30 +50,7 @@ public class Components {
 	public void setStandByPort(String standByPort) {
 		this.standByPort = standByPort;
 	}
-	public String getRabbitMqHost() {
-		return rabbitMqHost;
-	}
-	public void setRabbitMqHost(String rabbitMqHost) {
-		this.rabbitMqHost = rabbitMqHost;
-	}
-	public String getRabbitMqPort() {
-		return rabbitMqPort;
-	}
-	public void setRabbitMqPort(String rabbitMqPort) {
-		this.rabbitMqPort = rabbitMqPort;
-	}
-	public String getRabbitMqUser() {
-		return rabbitMqUser;
-	}
-	public void setRabbitMqUser(String rabbitMqUser) {
-		this.rabbitMqUser = rabbitMqUser;
-	}
-	public String getRabbitMqPassword() {
-		return rabbitMqPassword;
-	}
-	public void setRabbitMqPassword(String rabbitMqPassword) {
-		this.rabbitMqPassword = rabbitMqPassword;
-	}
+	
 	public String getElasticsearchHost() {
 		return elasticsearchHost;
 	}

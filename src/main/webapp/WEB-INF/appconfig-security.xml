@@ -15,12 +15,12 @@
         <intercept-url pattern="/login" access="permitAll"/>
         <intercept-url pattern="/registration" access="permitAll"/>
 
-        <intercept-url pattern="/users/**" access="hasRole('ROLE_USER') and authentication.name == 'admin_vp'"/>
-        <intercept-url pattern="/user/rabbit" access="hasRole('ROLE_USER') and authentication.name == 'admin_vp'"/>
-        <intercept-url pattern="/user/elasticsearch" access="hasRole('ROLE_USER') and authentication.name == 'admin_vp'"/>
-        <intercept-url pattern="/rest/**" access="hasRole('ROLE_USER') and authentication.name == 'admin_vp'"/>
+        <intercept-url pattern="/users/**" access="hasAuthority('ROLE_USER') and authentication.name == 'admin_vp'"/>
+        <intercept-url pattern="/user/rabbit" access="hasAuthority('ROLE_USER') and authentication.name == 'admin_vp'"/>
+        <intercept-url pattern="/user/elasticsearch" access="hasAuthority('ROLE_USER') and authentication.name == 'admin_vp'"/>
+        <intercept-url pattern="/rest/**" access="hasAuthority('ROLE_USER') and authentication.name == 'admin_vp'"/>
 
-        <intercept-url pattern="/**" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/**" access="hasAuthority('ROLE_USER')"/>
         <form-login login-page="/login" default-target-url="/welcome" authentication-failure-url="/login?error" username-parameter="username" password-parameter="password"/>
         <logout logout-success-url="/login?logout" delete-cookies="JSESSIONID"/>
     </http>

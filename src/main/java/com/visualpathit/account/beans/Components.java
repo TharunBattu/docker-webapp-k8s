@@ -15,14 +15,6 @@ public class Components {
 	@Value("${memcached.standBy.port}")
     private String standByPort;
 	
-	@Value("${rabbitmq.address}")
-    private String rabbitMqHost;
-	@Value("${rabbitmq.port}")
-    private String rabbitMqPort;
-	@Value("${rabbitmq.username}")
-    private String rabbitMqUser;
-	@Value("${rabbitmq.password}")
-    private String rabbitMqPassword;
 	
 	@Value("${elasticsearch.host}")
     private String elasticsearchHost;

@@ -8,7 +8,6 @@ import com.visualpathit.account.validator.UserValidator;
 
 import java.security.Principal;
 import java.util.List;
-import java.util.UUID;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

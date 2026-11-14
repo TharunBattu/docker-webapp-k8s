@@ -133,11 +133,7 @@
                 <div><strong>All users</strong><span>Browse every registered profile</span></div>
                 <svg class="icon chev"><use href="${ico}#i-chevron"/></svg>
               </a>
-              <a class="action" href="${contextPath}/user/rabbit">
-                <span class="icon-box"><svg class="icon"><use href="${ico}#i-send"/></svg></span>
-                <div><strong>RabbitMQ test</strong><span>Publish 20 test messages</span></div>
-                <svg class="icon chev"><use href="${ico}#i-chevron"/></svg>
-              </a>
+              
               <a class="action" href="${contextPath}/user/elasticsearch">
                 <span class="icon-box"><svg class="icon"><use href="${ico}#i-search"/></svg></span>
                 <div><strong>Elasticsearch sync</strong><span>Index users into Elasticsearch</span></div>

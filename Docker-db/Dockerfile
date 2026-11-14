@@ -12,6 +12,7 @@ FROM mysql:5.7.44
 ENV MYSQL_DATABASE=accounts
 
 # Scripts in this folder run once, only when the data directory is empty
+LABEL cont=mysql-cont
 COPY db_backup.sql /docker-entrypoint-initdb.d/01-accounts.sql
 
 EXPOSE 3306
